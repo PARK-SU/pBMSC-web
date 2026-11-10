@@ -1,0 +1,26 @@
+{
+  "name": "pbmsc-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run prepare-data && tsc -b && svelte-check --tsconfig ./tsconfig.app.json --fail-on-warnings && vite build && node scripts/bundle-size.ts",
+    "preview": "vite preview",
+    "prepare-data": "node scripts/prepare-data.ts"
+  },
+  "dependencies": {
+    "@wasm-audio-decoders/ogg-vorbis": "0.1.20",
+    "fflate": "0.8.3",
+    "svelte": "5.57.3"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "@types/node": "^24.19.2",
+    "svelte-check": "4.7.8",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.6",
+    "vite-plugin-pwa": "2.0.0",
+    "workbox-core": "7.4.1",
+    "workbox-precaching": "7.4.1"
+  }
+}
